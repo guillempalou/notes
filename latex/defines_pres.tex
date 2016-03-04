@@ -1,0 +1,69 @@
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{caption}
+\usepackage{fontenc}
+
+\usepackage{subfigure}
+\usepackage{textcomp} % provide lots of new symbols
+\usepackage{graphicx}  % Add graphics capabilities
+\usepackage{epstopdf} % to include .eps graphics files with pdfLaTeX
+\usepackage{flafter}  % Don't place floats before their definition
+\usepackage{topcapt}   % Define \topcation for placing captions above tables (not in gwTeX)
+
+%\usepackage{bm}  % Define \bm{} to use bold math fonts
+
+ \usepackage[activate]{pdfcprot}  % Turn on margin kerning (not in gwTeX)
+\usepackage{pdfsync}  % enable tex source and pdf output syncronicity
+
+\usepackage{tikz}
+\usetikzlibrary{%
+  arrows,%
+  shapes.misc,% wg. rounded rectangle
+  shapes.arrows,%
+  chains,%
+  matrix,%
+  positioning,% wg. " of "
+  scopes,%
+  decorations.pathmorphing,% /pgf/decoration/random steps | erste Graphik
+  shadows%
+}
+\usetikzlibrary{calc}
+
+%\usepackage{eulervm}
+
+
+\usetheme{Warsaw}
+
+%\useoutertheme{infolines}
+\useoutertheme[subsection=true]{smoothbars}
+\usecolortheme{beetle}
+\useinnertheme{rectangles}
+\setbeamercovered{transparent}
+
+\definecolor{fondoblock}{rgb}{0.8,0.8,0.8}
+\definecolor{blocktitle}{rgb}{0.28,0.32,0.49}
+\setbeamercolor{block title}{bg=blocktitle}%bg=background, fg= foreground
+\setbeamercolor{block body}{bg=fondoblock,fg=black}
+\setbeamercolor{itemize item}{bg=blocktitle,fg=blocktitle}
+\setbeamercolor{background canvas}{bg=white} 
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{description item}{fg=blocktitle}
+\setbeamercolor{titlelike}{parent=palette tertiary} 
+
+\setbeamerfont{section number projected}{family=\rmfamily,series=\bfseries,size=\large}
+\setbeamercolor{section number projected}{bg=blocktitle,fg=white}
+
+\newcommand{\beginbackup}{
+   \newcounter{framenumbervorappendix}
+   \setcounter{framenumbervorappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumbervorappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumbervorappendix}} 
+}
+
+\newcommand{\slidecite}[1]{\footnote[frame]{\tiny \bibentry{#1}}}
+

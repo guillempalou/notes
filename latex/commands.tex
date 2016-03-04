@@ -1,0 +1,45 @@
+\newcommand{\vvector}[1]{\mathbf{#1}} 							% vector
+\newcommand{\mmatrix}[1]{\mathbf{#1}} 						% matrix
+\newcommand{\mmatrixcomp}[3]{#1_{#2#3}}					% matrix component
+\newcommand{\vvectorcomp}[2]{#1_{#2}}						% vector component
+\newcommand{\inv}[1]{\mmatrix{#1}^{-1}}						% matrix inverse
+\newcommand{\determinant}[1]{\det \left( \mmatrix{#1} \right)}		% matrix determinant
+\newcommand{\size}[1]{| #1 |}								%number of elements
+\newcommand{\modulus}[1]{\| #1 \|}							%modulus
+
+\newcommand{\function}[2]{#1\left(#2\right)}			%function
+\newcommand{\vfunction}[2]{\bm{#1}\left(#2\right)}		%vectorial function
+\newcommand{\ppartial}[2]{\frac{\partial #1}{\partial #2}}	%partial derivative of a function
+\newcommand{\dpartial}[2]{\frac{\partial^2 #1}{\partial #2^2}}	%second partial derivative of a function
+\newcommand{\cpartial}[3]{\frac{\partial^2 #1}{\partial #2\partial #3}} % second partial crossed derivative
+\newcommand{\gradient}[2]{\vvector{\nabla} #1 \left(#2\right)}	%gradient symbol
+\newcommand{\hessian}[2]{\mmatrix{H} #1 \left( #2\right)}	%hessian
+\newcommand{\laplacian}{\Delta}					%laplacian symbol
+\newcommand{\expectation}[1]{E \left\{ #1 \right\}}		%expectation
+\newcommand{\estimate}[1]{\widehat{#1}}			%estimate
+
+\newcommand{\complex}{\jmath}					%complex symbol
+\newcommand{\conj}[1]{#1^*}						%conjugate
+\newcommand{\fouriertransform}[2]{\function{\mathcal{\uppercase{#1}}} {#2} }			%fourier transform
+\newcommand{\fourier}[1]{\mathbb{\uppercase{#1}}}			%fourier transform
+\newcommand{\cexp}[1]{e^{\complex #1}}
+
+
+\newcommand{\prob}[1]{\text{p}\left( #1\right)}					% probability
+\newcommand{\conditioned}[2]{\text{p} \left( #1 | #2 \right)}		% conditioned probability
+\newcommand{\pdf}[1]{f_{\uppercase{#1}} \left( #1 \right) }		% probability density function
+%\newcommand{\expectation}[1]{E \left\{ #1 \right\} }
+
+\newcommand{\mean}[1]{\mu_{#1}}							%mean
+\newcommand{\stddev}[1]{\sigma_{#1}}						%standard deviation
+\newcommand{\variance}[1]{\sigma^2_{#1}}					%variance
+\newcommand{\covariance}[1]{\mmatrix{\Sigma}_{#1}}			%covariance matrix
+\newcommand{\gaussian}[1]{\mathcal{N}\left( \mean{#1}, \variance{#1} \right)} %Gaussian random variable
+\newcommand{\vgaussian}[1]{\mathcal{N}\left( \vvector{\mean{#1}}, \covariance{#1} \right)} %Gaussian random variable
+
+\newcommand{\pixel}[1]{\vvector{#1}} 						% pixel
+\newcommand{\image}[1]{\mmatrix{#1}} 						% image
+
+\newcommand{\neighbor}[1]{\function{\Omega}{\pixel{#1}}}
+\newcommand{\bounds}[1]{\partial #1}
+\newcommand{\curv}[1]{\vfunction{\kappa}{\pixel{p}}}
