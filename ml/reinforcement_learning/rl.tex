@@ -71,12 +71,35 @@ v_{\pi} &= E_{\pi}\left[G_t | S_t = s \right] \\
 Now, taking the average according to a policy is exactly the same as:
 \begin{align}
 E_{\pi}\left[f(x) | S_t = s \right] = \sum_{a}\pi(a|s) \sum_{s'} p(s' | s,a) f(x)
+\label{eq:bellman}
 \end{align}
 And also, that the second term in the previous equation has the form than the original equation. Essentially, this second term is the value of all states at time $t+1$. Therefore, the final form of the equation is:
 
 \begin{align}
 v_{\pi} =  \sum_{a}\pi(a|s) \sum_{s'} p(s' | s,a) \left[ r(s,a,s') + \gamma v_{pi}(s') \right]
 \end{align}
-which defines a system of linear equations on the state values.
+which defines a system of equations on the state values.
+
+\subsection{Optimal Value}
+The goal is to find the optimal policy given the sate values:
+\begin{align}
+    v_*(s) = \max_\pi v_\pi (s) \qquad \forall s \in S
+\end{align}
+where $S$ is the set of states. Also, optimal policies share the optimal action-values:
+\begin{align}
+    q_*(s,a) = \max_\pi q_\pi (s, a)
+    \label{eq:optimal_action}
+\end{align}
+We can derive then the $Bellman optimilaity equation$ from \eqref{eq:bellman} by realizing that we can write \eqref{eq:otpimal_action} as:
+\begin{align}
+    q_*(s,a) = E\left[R_{t+1} + \gamma v_*(s_{t+1})\right]
+\end{align}
+And just because the optimal policy from a state is the one choosing the optimum action we have:
+\begin{align}
+    v_*(s) &= \max_{a \in \mathcal{A}(s)} q_*(s,a) \\
+    &= \max_{a \in \mathcal{A}(s)} E\left[R_{t+1} + \gamma v_*(s_{t+1})\right] \\
+    &= \max_{a \in \mathcal{A}(s)} \sum_{s'} p(s'|a,s)\left[r(s,a,s') + \gamma v_*(s')\right]
+\end{align}
+The intuitive explanation behind all these equations is that the optimal value for a state will be obtained by examining all possible actions on that state and choosing the one that gives larger expected rewards, based on the other state optimum values.
 
 \end{document}
