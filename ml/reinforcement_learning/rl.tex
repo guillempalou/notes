@@ -76,7 +76,7 @@ E_{\pi}\left[f(x) | S_t = s \right] = \sum_{a}\pi(a|s) \sum_{s'} p(s' | s,a) f(x
 And also, that the second term in the previous equation has the form than the original equation. Essentially, this second term is the value of all states at time $t+1$. Therefore, the final form of the equation is:
 
 \begin{align}
-v_{\pi} =  \sum_{a}\pi(a|s) \sum_{s'} p(s' | s,a) \left[ r(s,a,s') + \gamma v_{pi}(s') \right]
+v_{\pi} =  \sum_{a}\pi(a|s) \sum_{s'} p(s' | s,a) \left[ r(s,a,s') + \gamma v_{\pi}(s') \right]
 \end{align}
 which defines a system of equations on the state values.
 
@@ -100,6 +100,6 @@ And just because the optimal policy from a state is the one choosing the optimum
     &= \max_{a \in \mathcal{A}(s)} E\left[R_{t+1} + \gamma v_*(s_{t+1})\right] \\
     &= \max_{a \in \mathcal{A}(s)} \sum_{s'} p(s'|a,s)\left[r(s,a,s') + \gamma v_*(s')\right]
 \end{align}
-The intuitive explanation behind all these equations is that the optimal value for a state will be obtained by examining all possible actions on that state and choosing the one that gives larger expected rewards, based on the other state optimum values.
+The intuitive explanation behind all these equations is that the optimal value for a state will be obtained by examining all possible actions on that state and choosing the one that gives larger expected rewards, based on the other state optimum values. We can also compute the optimum action
 
 \end{document}
