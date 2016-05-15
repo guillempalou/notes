@@ -15,6 +15,15 @@ iface eth0 inet manual
    dns-nameservers 8.8.8.8 8.8.4.4
 ```
 
+If you want to use static DNS under a dhcp you need to modify /etc/dhcp/dhclient.conf and add 
+
+```
+supersede domain-name-servers 8.8.8.8, 8.8.4.4
+```
+
+And that will overwirte whatever DNS server the gateway is sending to the raspberry
+
+
 ## Configuring the connection
 
 I am explaining how to do it in PIA, but openvpn configuration should be fairly similar. You can download https://www.privateinternetaccess.com/openvpn/openvpn.zip, but you can configure the openvpn file without it.
@@ -60,6 +69,8 @@ The important lines on this file are:
 - *down-pre* - set the down script to run just before VPN gets shut down
 - *down route-down.sh* - script to be run when VPN stops
 - *remote HOSTNAME PORT* - server configuration
+
+sometimes you will need to put the host in numeric, because sometimes openvpn will time out and it will drop you connections
 
 ## Scripts to run before and after the connection
 

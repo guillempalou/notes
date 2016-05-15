@@ -2,6 +2,7 @@
 # Additional files
 *.pdf
 .DS_Store
+.ipynb_checkpoints
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
